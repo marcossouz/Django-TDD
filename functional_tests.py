@@ -20,7 +20,7 @@ class NewVisitorTest(unittest.TestCase):
         # Ela percebe que o titulo da página e o cabeçalho mencionam listas de 
         # Tarefas (to-do)
         self.assertIn('To-Do', self.browser.title)
-        header_text = self.browser.find_element_by_class_name('h1').text
+        header_text = self.browser.find_element_by_tag_name('h1').text
         self.assertIn('To-Do', header_text)
 
         # Ela é convidada a inserir um item de tarefa imediatamente
@@ -36,13 +36,14 @@ class NewVisitorTest(unittest.TestCase):
 
         # Quando ela tecla enter, a página é atualizada, e agora a página lista
         # "1: Buy peacock feathers" Como um item em uma lista de tarefas
-        input.send_keys(Keys.ENTER)
+        inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
         
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
         self.assertTrue(
-            any(row.text == '1: Buy peacock frathers' for row in rows)
+            any(row.text == '1: Buy peacock frathers' for row in rows),
+            "New to-do item did not appear in table"
             )
 
         # Ainda continua havendo uma caixa de texto convidando-a a acrescentar outro
