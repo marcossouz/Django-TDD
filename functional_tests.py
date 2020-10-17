@@ -58,8 +58,10 @@ class NewVisitorTest(unittest.TestCase):
         time.sleep(1)
 
         # A página é atualizada novamente e agora mostra os dois itens em sua lista
-        self.check_for_row_in_list_table('1: Buy peacock feathers', [row.text for row in rows])
-        self.check_for_row_in_list_table('2: Use peacock feathers to make a fly', [row.text for row in rows])
+        table = self.browser.find_element_by_id('id_list_table')
+        rows = table.find_elements_by_tag_name('tr')
+        self.check_for_row_in_list_table('1: Buy peacock feathers')
+        self.check_for_row_in_list_table('2: Use peacock feathers to make a fly')
 
         # Edith se pergunta se o site lembrará de sua lista. Então ela nota 
         # que o site gerou um URL único para ela -- há um pequeno 
