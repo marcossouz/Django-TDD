@@ -1,14 +1,15 @@
+from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
-import unittest
 
-class NewVisitorTest(unittest.TestCase):
+
+class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
 
-    def  tearDown(self):
+    def tearDown(self):
         self.browser.quit()
 
     def check_for_row_in_list_table(self, row_text):
@@ -20,7 +21,7 @@ class NewVisitorTest(unittest.TestCase):
 
         # Edith ouviu falar de uma nova aplicação online interessante
         # para lista de tarefas. Ela decidiu verificar sua homepage
-        self.browser.get('http://localhost:8000')
+        self.browser.get(self.live_server_url)
 
         # Ela percebe que o titulo da página e o cabeçalho mencionam listas de 
         # Tarefas (to-do)
@@ -72,7 +73,4 @@ class NewVisitorTest(unittest.TestCase):
         # Ela acessa esse URL - sua lista de tarefas continua lá.
 
         # Satisfeita, ela volta a dormir
-
-if __name__ == '__main__':
-    unittest.main(warnings='ignore')
 
