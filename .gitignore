@@ -9,6 +9,6 @@ __pycache__
 *.pyc
 
 # IDE
-.vscode/
-
+.vscode
+.idea
 venv
