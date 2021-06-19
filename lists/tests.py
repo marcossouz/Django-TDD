@@ -5,6 +5,7 @@ from django.http import HttpRequest
 from lists.views import home_page
 from lists.models import Item
 
+
 class HomePageTest(TestCase):      
     def test_home_returns_correct_html(self):
         response = self.client.get('/')
@@ -22,6 +23,7 @@ class HomePageTest(TestCase):
 
         self.assertIn('itemey 1', response.content.decode())
         self.assertIn('itemey 2', response.content.decode())
+
 
 class ItemModelTest(TestCase):
     def test_saving_and_retrieving_items(self):
