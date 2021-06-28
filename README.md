@@ -2,6 +2,10 @@
 
 <p align="center">TDD com python - Siga o bode dos testes: usando Django, Selenium e Javascript</p>
 
+<h4 align="center"> 
+	🚧  Em andamento...  🚧
+</h4>
+
 Tabela de conteúdos
 =====================
 
