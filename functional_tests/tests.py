@@ -1,5 +1,6 @@
 from django.test import LiveServerTestCase
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import WebDriverException
 import time
@@ -10,7 +11,9 @@ MAX_WAIT = 10
 class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
-        self.browser = webdriver.Firefox()
+        options = Options()
+        options.headless = True
+        self.browser = webdriver.Firefox(options=options)
 
     def tearDown(self):
         self.browser.quit()
@@ -85,7 +88,10 @@ class NewVisitorTest(LiveServerTestCase):
         ## Usamos um nova sessão de navegador para garantir que nenhuma informação
         ## de edite está vindo de cookies etc
         self.browser.quit()
-        self.browser = webdriver.Firefox()
+
+        options = Options()
+        options.headless = True
+        self.browser = webdriver.Firefox(options=options)
 
         # Francis acessa a página inicial. Não há nenhum sinal da lista de Edith
         self.browser.get(self.live_server_url)
