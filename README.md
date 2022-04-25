@@ -44,14 +44,14 @@ Repositório utilizado em acompanhamento ao livro "TDD com Python - SIGA O BODE 
 
 ## Conteúdo do Livro
 
-- [ ] Parte I - Básico sobre TDD e Django 
+- [x] Parte I - Básico sobre TDD e Django 
   - [x] Capítulo 1 - Configurando o Django com um teste funcional
   - [x] Capítulo 2 - Estendendo nosso teste funcional usando unittest
   - [x] Capítulo 3 - Testando uma página inicial simples com testes de unidade
   - [x] Capítulo 4 - O que estamos fazendo com todos esses testes? (E a refatoração)
   - [x] Capítulo 5 - Salvando a entrada do usuário
   - [x] Capítulo 6 - Melhorando os testes funcionais: garantindo o isolamento e removendo sleeps vodus
-  - [ ] Capítulo 7 Trabalhando de forma incremental
+  - [x] Capítulo 7 Trabalhando de forma incremental
 - [ ] Parte II - Sine qua nons do desenvolvimento
   - [ ] Capítulo 8 - Embelezamento: layout e estilização, e o que testar sobre eles
   - [ ] Capítulo 9 - Testando a implementação usando um site de staging
